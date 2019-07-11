@@ -11,8 +11,8 @@ import fastClick from 'fastclick'
 fastClick.attach(document.body);
 
 //css
-import './assets/css/reset.css'
-import './assets/css/iconfont.css'
+import 'css/reset.css'
+import 'css/iconfont.css'
 
 
 
