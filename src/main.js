@@ -15,6 +15,12 @@ import 'css/reset.css'
 import 'css/iconfont.css'
 
 
+//swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, )
+
 
 /* eslint-disable no-new */
 new Vue({
