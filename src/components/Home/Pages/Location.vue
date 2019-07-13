@@ -28,7 +28,7 @@ export default {
 <style scoped>
 
 .location{
-
+    background: #fff;
     position: relative;
     display:flex;
 }

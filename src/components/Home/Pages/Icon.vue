@@ -94,17 +94,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='stylus'>
+@import '~css/common.styl';
 
-.icon{
+.icons{
     width: 100%;
     overflow: hidden;
+    background: #fff;
 }
 
 .icons-item{
     float: left;
     width:25%;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     height:0%;   
 }
 
@@ -121,6 +123,7 @@ export default {
     font-size: .28rem;
     text-align: center;
     color: #212121;
+    textOverflow()
 }
 
 
