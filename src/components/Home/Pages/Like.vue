@@ -25,51 +25,10 @@
 
 <script>
 export default {
-
+    props:['likeList'],
     data(){
         return{
-            likeList:[
-                {
-                    id:'01',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_200x200_1c15c8f5.jpg',
-                    title:'深圳野生动物园',
-                    rates:'19526条评论',
-                    fee:'229.9',
-                    position:'南山区'
-                },
-                {
-                    id:'02',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1905/e6/e683c8cf5e97ce03a3.img.jpg_200x200_4769276c.jpg',
-                    title:'世界之窗',
-                    rates:'44128条评论',
-                    fee:'85',
-                    position:'华侨城'
-                },
-                {
-                    id:'03',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1907/92/924c05d7f374493ea3.img.png_200x200_e8f3e8d6.png',
-                    title:'深圳欢乐谷',
-                    rates:'30979条评论',
-                    fee:'99',
-                    position:'南山区'
-                },
-                {
-                    id:'04',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg',
-                    title:'深圳小梅沙海洋世界',
-                    rates:'19526条评论',
-                    fee:'155',
-                    position:'小梅沙'
-                },
-                {
-                    id:'05',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1808/48/48ae3e0f9a3f195ca3.img.jpg_200x200_f2195465.jpg',
-                    title:'Skyland未来科技馆',
-                    rates:'96条评论',
-                    fee:'268',
-                    position:'福田区'
-                },
-            ]
+            
         }
     }
 

@@ -2,12 +2,12 @@
     <div class="home">
 
         <HomeHeader></HomeHeader>
-        <HomeSwiper></HomeSwiper>
-        <HomeIcon></HomeIcon>
+        <HomeSwiper :swiperList='swiperList'></HomeSwiper>
+        <HomeIcon :iconsList='iconsList'></HomeIcon>
         <HomeLocation></HomeLocation>
-        <HomeHot></HomeHot>
-        <HomeLike></HomeLike>
-        <HomeWeekend></HomeWeekend>
+        <HomeHot :hotList='hotList'></HomeHot>
+        <HomeLike :likeList='likeList'></HomeLike>
+        <HomeWeekend :weekendList='weekendList'></HomeWeekend>
         
 
     </div>
@@ -32,6 +32,29 @@ export default {
         HomeHot,
         HomeLike,
         HomeWeekend
+    },
+    data(){
+        return{
+            swiperList:[],
+            iconsList:[],
+            likeList:[],
+            hotList:[],
+            weekendList:[],
+
+
+        }
+    },
+    mounted(){
+        this.$http.get("/api/dataHome.json")
+        .then((res)=>{
+            const data = res.data.data[0];
+            this.swiperList = data.swiperList;
+            this.iconsList = data.iconsList;
+            this.likeList = data.likeList;
+            this.hotList = data.hotList;
+            this.weekendList = data.weekendList;
+            
+        })
     }
 }
 </script>

@@ -19,6 +19,10 @@ import 'css/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
+//axios
+import axios from 'axios'
+Vue.prototype.$http = axios
+
 Vue.use(VueAwesomeSwiper, )
 
 

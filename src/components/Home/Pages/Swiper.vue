@@ -13,31 +13,15 @@
 
 <script>
 export default {
+    props:['swiperList'],
     data(){
         return {
-
-            swiperList:[
-                {
-                    id:'01',
-                    imgUrl:require('@/assets/img/1.1.png')
-                },
-                {
-                    id:'02',
-                    imgUrl:require('@/assets/img/2.1.png')
-                },
-                {
-                    id:'03',
-                    imgUrl:require('@/assets/img/3.1.png')
-                }
-
-
-            ],
 
             swiperOption:{
                 pagination: {
                 el: '.swiper-pagination'
             },
-            loop : true
+            autoplay : true
 
         }
     }
