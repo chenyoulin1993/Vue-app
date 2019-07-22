@@ -65,7 +65,9 @@ export default {
     methods:{
         changeSort(sortName){
 
-            console.log(this.$refs)
+            this.scroll.scrollToElement(this.$refs[sortName][0])
+
+            //console.log(this.$refs[sortName][0])
 
         }
     }
