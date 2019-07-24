@@ -5,7 +5,7 @@
              <div class="hot">
                 <div class="hot-title">热门城市</div>
                 <ul class="hot-list">
-                   <li class="hot-item" v-for="item in cityHot" :key="item.id">
+                   <li class="hot-item" v-for="item in cityHot" :key="item.id" @click="changeCityName(item.name)">
                        {{ item.name }}
                    </li>
                 </ul>
@@ -18,7 +18,7 @@
         <ul class="alphabet-list">
           
           
-          <li class="alphabet-item" v-for="(val,key) in cityList" v-on:click="changeSort(key)">
+          <li class="alphabet-item" v-for="(val,key) in cityList" :key="key" v-on:click="changeSort(key)">
               {{ key }}
               </li>
         </ul>
@@ -29,10 +29,10 @@
 
 
             <div class="list">
-                <div v-for="(val,key) in cityList" :ref="key" >
+                <div v-for="(val,key) in cityList" :ref="key" :key="key">
                     <div class="list-title">{{key}}</div>
                     <ul class="list-area">
-                    <li class='list-item' v-for="item in val" :key="item.id">
+                    <li class='list-item' v-for="item in val" :key="item.id" @click="changeCityName(item.name)">
                         {{ item.name }}
                     </li>        
                     </ul>
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import BScroll from '@better-scroll/core'
 export default {
     props:['cityList','cityHot'],
@@ -69,7 +70,14 @@ export default {
 
             //console.log(this.$refs[sortName][0])
 
-        }
+        },
+        changeCityName(cityName){
+
+            this.changeCity(cityName);
+
+            this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
     }
 
     
@@ -86,7 +94,9 @@ export default {
     bottom:0;
     top:.88rem;
 }
-
+.content{
+    background: #ddd;
+}
 
 .list-title{
     font-size: .24rem;
@@ -103,9 +113,10 @@ export default {
 .list-area{
     position: relative;
     background: #fff;
-     overflow: hidden;
+    overflow: hidden;
 }
 .list-item{
+    position: relative;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -130,7 +141,7 @@ export default {
     content:' ';
     position: absolute;
     left: 75%;
-    width: 25%;
+    width: 0%;
     height: 100%;
     border-left: .02rem solid #ddd;
     border-right: .02rem solid #ddd;
@@ -157,6 +168,7 @@ export default {
     border-right:.02rem solid #ddd ;
 }
 .hot-item{
+    position: relative;
     width: 33.33%;
     text-align: center;
     height: .9rem;

@@ -26,10 +26,14 @@ Vue.prototype.$http = axios
 Vue.use(VueAwesomeSwiper, )
 
 
+import store from './store'
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

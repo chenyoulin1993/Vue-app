@@ -2,12 +2,12 @@
     <div>
         <swiper :options="swiperOption" class="header-swiper">
         <!-- slides -->
-        <swiper-slide v-for="item in swiperList" :key="item.id"><img :src="item.imgUrl"></swiper-slide>
+            <swiper-slide v-for="item in swiperList" :key="item.id"><img :src="item.imgUrl"></swiper-slide>
 
         <!-- Optional controls -->
-        <div class="swiper-pagination"  slot="pagination"></div>
+            <div class="swiper-pagination"  slot="pagination"></div>
 
-  </swiper>
+        </swiper>
     </div>
 </template>
 

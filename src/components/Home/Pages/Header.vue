@@ -10,7 +10,8 @@
             </div>
             <div class='header-right'>
                 <router-link to="/city">
-                深圳<span class="iconfont">&#xe62d;</span>
+                {{ city }}
+                <span class="iconfont">&#xe62d;</span>
                 </router-link>
             </div>
 
@@ -21,9 +22,16 @@
 </template>
 
 <script>
-export default {
+
+import {mapState} from 'vuex'
+export default  {
+
+    computed:{
+        ...mapState(['city'])
+    }
 
 }
+
 </script>
 
 <style scoped lang='stylus'>

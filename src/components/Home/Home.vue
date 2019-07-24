@@ -55,7 +55,8 @@ export default {
             this.weekendList = data.weekendList;
             
         })
-    }
+    },
+
 }
 </script>
 
