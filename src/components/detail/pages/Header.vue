@@ -3,15 +3,13 @@
 
         <div class="header-return" v-show="showHeader">
             <span class="border-return"></span>
-            <span class="iconfont return">&#xe624;</span>
+            <span class="iconfont return" @click="toHome">&#xe624;</span>
         </div>
 
-
-
-             <div class="header-top" v-show="!showHeader">
+             <div class="header-top" v-show="!showHeader" :style="styleOpacity">
 
             <div class='header-left'>
-                <span class="iconfont">&#xe624;</span>
+                <span class="iconfont" @click="toHome">&#xe624;</span>
             </div>
 
             深圳野生动物园
@@ -25,12 +23,30 @@ export default {
 
     data(){
         return{
-            showHeader:true
+            showHeader:true,
+            styleOpacity:{
+                opacity:0
+            }
+        }
+    },
+    methods:{
+        toHome(){
+            this.$router.push("/")
         }
     },
     mounted() {
+
+        let That = this;
         window.addEventListener("scroll",function(){
-            console.log('1')
+            let top = document.documentElement.scrollTop;
+            if(top>45){
+                let opacity = top/130;
+                opacity = opacity > 1?1:opacity
+                That.styleOpacity = {opacity}
+                That.showHeader = false
+            }else{
+                That.showHeader = true
+            }
         })
     },
 }
@@ -81,6 +97,7 @@ export default {
     background:$bgColor;
     color:$textColor;
     font-size: .36rem;
+    
 }
 .header-left{
     position absolute;
